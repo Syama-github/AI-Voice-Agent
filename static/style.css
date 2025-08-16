@@ -1,0 +1,109 @@
+/* ===== Cozy Coffee Shop UI ===== */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3e5ab;
+  background-size: 150px;
+  margin: 0;
+  padding: 0;
+  color: #3e2723; /* espresso */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main container */
+.container {
+  background: linear-gradient(180deg, #fff8f0, #f5e6d3); /* latte gradient */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(62, 39, 35, 0.3);
+  width: 420px;
+  max-width: 95%;
+  text-align: center;
+  position: relative;
+}
+
+/* Title with steam */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #4e342e; /* mocha */
+  font-weight: bold;
+  position: relative;
+}
+
+/* Steam animation */
+
+
+@keyframes steamRise {
+  0% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+  50% { transform: translate(-50%, -10px) scale(1.1); opacity: 0.7; }
+  100% { transform: translate(-50%, -20px) scale(1); opacity: 0; }
+}
+
+/* Chat area */
+#chatHistory {
+  background-color: rgba(255, 249, 240, 0.9); /* milky foam */
+  border: 1px solid #d7ccc8;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 280px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Chat bubbles */
+.chat-message {
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  max-width: 80%;
+  line-height: 1.4;
+}
+
+.chat-message.user {
+  background-color: #f4a261; /* caramel */
+  color: white;
+  text-align: right;
+  margin-left: auto;
+  box-shadow: 0 3px 6px rgba(244, 162, 97, 0.3);
+}
+
+.chat-message.assistant {
+  background-color: #d7ccc8; /* cappuccino foam */
+  text-align: left;
+  margin-right: auto;
+  box-shadow: 0 3px 6px rgba(215, 204, 200, 0.3);
+}
+
+/* Record button */
+#recordBtn {
+  background: linear-gradient(90deg, #6d4c41, #8d6e63); /* espresso blend */
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s;
+  box-shadow: 0 4px 12px rgba(109, 76, 65, 0.3);
+}
+
+#recordBtn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #5d4037, #7b5e57);
+}
+
+/* Recording pulse */
+.recording {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(109, 76, 65, 0.6); }
+  70% { box-shadow: 0 0 0 15px rgba(109, 76, 65, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(109, 76, 65, 0); }
+}

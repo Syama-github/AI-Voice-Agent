@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Voice Agent</title>
+
+  <!-- ✅ Flask static links -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Voice Agent</h1>
+    <p class="status" id="status-text">Press the button to start speaking...</p>
+
+    <button id="record-btn" class="record-btn">Start Recording</button>
+
+    <div id="chat-container"></div>
+
+    <!-- (Optional) hidden audio element if you want to reuse it -->
+    <audio id="agent-audio" style="display:none;"></audio>
+  </div>
+
+  <!-- ✅ Flask static script -->
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
